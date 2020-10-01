@@ -1,3 +1,6 @@
 # Matching-game-in-python
-Boxes matching game using pygame module in python.
-Install pygame module first and then run app.py
+Boxes matching game using pygame module in python.  
+
+1. install pygame module using command  
+py -m pip install -U pygame --user  
+2. run app.py
