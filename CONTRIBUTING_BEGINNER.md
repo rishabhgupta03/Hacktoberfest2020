@@ -99,4 +99,4 @@ And, you're done. Your pull request would be submitted and reviewed and merged.
 
 
 All the Best! 
-:D Happy Contributing... :D
+Happy Contributing... :D
