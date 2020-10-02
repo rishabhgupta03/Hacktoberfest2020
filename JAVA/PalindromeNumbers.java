@@ -9,7 +9,7 @@ public class PalindromeNumbers {
 		int n = sc.nextInt();
 		
 		int temp = n;
-		int reversedNumber = 0;;
+		int reversedNumber = 0;
 		
 		while(temp > 0) {
 			int lastDigit = temp % 10;
