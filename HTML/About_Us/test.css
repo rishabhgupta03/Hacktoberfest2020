@@ -1,0 +1,112 @@
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  height:auto;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  display: block;
+}
+
+.fa-facebook:hover {
+    opacity: 0.3;
+    transition: 0.5s;
+    color:#3B5998;
+    background:black;
+    transform: scale(1.10);
+}
+
+.fa-linkedin:hover{
+  opacity: 0.3;
+    transition: 0.5s;
+    color:#007bb5;
+    background:black;
+    transform: scale(1.10);
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.teams{
+  background: #fff;
+  text-align: center;
+}
+.teams h1{
+  display: inline-block;
+  text-transform: uppercase;
+  border-bottom: 3px solid #3498db;
+  font-size: 30px;
+  padding-bottom: 10px;
+  margin-top: 40px;
+	font-weight: bold;
+}
+.cen{
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+.team{
+  display: inline-block;
+  width: calc(100% / 3);
+  margin: 0 -2px;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.team:hover{
+  transform: scale(1.1);
+}
+.team img{
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+}
+.team h2{
+	padding-top: 8px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0;
+	color: #3498db;
+}
+.team p{
+  color: grey;
+  font-size: 18px;
+  font-weight: 500;
+	border-bottom: 1px solid grey;
+  padding-bottom: 5px;
+  margin-top: 5px;
+}
+.teams i{
+	font-size: 35px;
+	padding: 10px;
+	border-radius: 50%;
+}
+.teams .fa-linkedin{
+	color: white;
+	background-color: powderblue;
+}
+.teams .fa-facebook{
+	color: white;
+	background-color: lightblue;
+}
+@media screen and (max-width: 800px) {
+  .team{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .team{
+    width: 100%;
+  }
+}
