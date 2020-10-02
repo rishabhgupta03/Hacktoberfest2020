@@ -95,7 +95,7 @@ $ git push -u origin Branch_Name
 And, you're done. Your pull request would be submitted and reviewed and merged.
 
 ## In case you got stuck.
-- It might seem like a lot if it's your first time but everyone started out new to GitHub and open source at some point. If you missed a few steps, don't worry, try again. You'd definitely get better.
+- It might seem like a lot if it's your first time but everyone started out new to GitHub and open source at some point. If you missed a few steps, don't worry, try again. You'll definitely get better.
 
 
 All the Best! 
