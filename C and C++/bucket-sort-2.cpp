@@ -1,8 +1,10 @@
 // C++ program to sort an array using bucket sort 
+#include <bits/stdc++.h>
 #include <algorithm> 
 #include <iostream> 
 #include <vector> 
-using namespace std; 
+using namespace std;
+typedef long long ll;
 
 // Function to sort arr[] of size n using bucket sort 
 void bucketSort(float arr[], int n) 
@@ -30,12 +32,12 @@ void bucketSort(float arr[], int n)
 /* Driver program to test above function */
 int main() 
 { 
-	float arr[] = { 0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434 }; 
-	int n = sizeof(arr) / sizeof(arr[0]); 
-	bucketSort(arr, n); 
+	float a[] = { 0.45, 0.54, 0.65, 0.72, 0.535, 0.932 }; 
+	int n = sizeof(a) / sizeof(a[0]); 
+	bucketSort(a, n); 
 
 	cout << "Sorted array is \n"; 
 	for (int i = 0; i < n; i++) 
-		cout << arr[i] << " "; 
+		cout << a[i] << " "; 
 	return 0; 
 } 
