@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veggie Burger</title>
+
+    <!-- Styles -->
+    <style>
+      body {
+        background: #eee;
+      }
+      #menu {
+        display: none;
+      }
+      .VeggieBurger {
+        margin: auto;
+
+        cursor: pointer;
+        background: transparent;
+        height: 50px;
+        position: relative;
+        width: 50px;
+      }
+      .VeggieBurger::before,
+      .VeggieBurger::after {
+        background-color: #222;
+        content: " ";
+        border: none;
+        border-radius: 5px;
+        display: block;
+        height: 5px;
+        left: 50%;
+        width: 100%;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: all 0.3s ease-in-out;
+      }
+      .VeggieBurger::before {
+        top: 20%;
+      }
+      .VeggieBurger::after {
+        top: 70%;
+      }
+
+      #menu:checked ~ #icon .VeggieBurger::before {
+        left: 0;
+        top: 45%;
+        transform: rotate(-45deg);
+      }
+      #menu:checked ~ #icon .VeggieBurger::after {
+        left: 0;
+        top: 45%;
+        transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="menu" />
+    <label id="icon" for="menu"><div class="VeggieBurger" /></label>
+  </body>
+</html>
