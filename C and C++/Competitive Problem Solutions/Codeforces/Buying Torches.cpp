@@ -1,0 +1,1 @@
+#include<bits\stdc++.h>using namespace std;#define ll long long int#define f(i,k,n) for(int i=k;i<n;i++)int main(){    ll t;    cin>>t;    while(t--){        ll x,y,k;        cin>>x>>y>>k;        ll tr = ceil(long double(((y+1)*k-1)/(x-1))+k);        cout<<tr<<endl;    }    return 0;}// ceil(((y+1)*k-1)/(x-1)) + k
