@@ -14,7 +14,7 @@ The following steps below outline how to make contributions to the existing proj
 
 - Fork this Repository. This will create a Local Copy of this Repository for you to work on.  This will make a copy on your Github Profile. Keep a reference to the original project in `upstream` remote.
 
-Got to your terminal and write this commands.
+Go to your terminal and execute the following commands.
 
 ```
 $ git clone https://github.com/<your-username>/<repo-name>
@@ -95,4 +95,8 @@ $ git push -u origin Branch_Name
 And, you're done. Your pull request would be submitted and reviewed and merged.
 
 ## In case you got stuck.
-- It might seem like a lot if it's your first time but everyone started out new to github and open source at some point. If you missed a few steps, don't worry, try again. You'd definitely get better.
+- It might seem like a lot if it's your first time but everyone started out new to GitHub and open source at some point. If you missed a few steps, don't worry, try again. You'll definitely get better.
+
+
+All the Best! 
+Happy Contributing... :D

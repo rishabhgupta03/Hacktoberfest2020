@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+public class SpiralPrint_Clockwise {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+        int[][] arr = new int[rows][cols];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = sc.nextInt();
+
+            }
+        }
+
+        SpiralPrint(arr);
+        System.out.println("END");
+    }
+
+    public static void SpiralPrint(int[][] arr) {
+        int top = 0;
+        int bottom = arr.length - 1;
+        int left = 0;
+        int right = arr[top].length - 1;
+        int count = (bottom+1) * (right+1);
+        int drn = 1;
+        while (left <= right && top <= bottom) {
+            if (count > 0) {
+                if (drn == 1) {
+                    for (int i = left; i <= right; i++) {
+                        System.out.print(arr[top][i]+", ");
+                        count--;
+                    }
+
+                    drn = 2;
+                    top++;
+                }
+            }
+            if (count > 0) {
+                if (drn == 2) {
+                    for (int i = top; i <= bottom; i++) {
+                        System.out.print(arr[i][right]+", ");
+                        count--;
+                    }
+                    drn = 3;
+                    right--;
+                }
+
+            }
+            if (count > 0) {
+                if (drn == 3) {
+                    for (int i = right; i >= left; i--) {
+                        System.out.print(arr[bottom][i]+", ");
+                        count--;
+                    }
+                    drn = 4;
+                    bottom--;
+                }
+
+
+            }
+            if (count > 0) {
+                if (drn == 4) {
+                    for (int i = bottom; i >= top; i--) {
+                        System.out.print(arr[i][left]+", ");
+                        count--;
+                    }
+                    drn = 1;
+                    left++;
+                }
+            }
+        }
+    }
+}
