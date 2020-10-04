@@ -1,9 +1,22 @@
-n = int(input())
-sum1 = 0
-for i in range(1, n):
-    if(n % i == 0):
-        sum1 = sum1 + i
-if (sum1 == n):
-    print("The number is a Perfect number!")
-else:
-    print("The number is not a Perfect number!")
+# in js
+
+function is_perfect(number)
+{
+var temp = 0;
+   for(var i=1; i<=number/2; i++)
+     {
+         if(number%i === 0)
+          {
+            temp += i;
+          }
+     }
+   
+     if(temp === number && temp !== 0)
+        {
+       console.log("It is a perfect number.");
+        } 
+     else
+        {
+       console.log("It is not a perfect number.");
+        }   
+} 
