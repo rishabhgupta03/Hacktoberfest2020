@@ -1,1 +1,1 @@
-Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.
+HTML (HyperText Markup Language) is a standard markup language for documents designed to be displayed in a web browser.
