@@ -126,5 +126,5 @@ int main()
     int new_val;
     cin >> new_val;
     d.check(new_val);
-
+    return 0;
 }
