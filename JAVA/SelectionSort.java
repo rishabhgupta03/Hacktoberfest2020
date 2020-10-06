@@ -1,33 +1,41 @@
-package arrays;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-public class SelectionSort {
+// Java program for implementation of Selection Sort
+class SelectionSort
+{
+	void sorting(ArrayList<Integer> arr)
+	{
+		int n = arr.size();
+		for (int i = 0; i < n-1; i++)
+		{			
+			int min_idx = i;
+			for (int j = i+1; j < n; j++)
+				if (arr.get(j) < arr.get(min_idx))
+					min_idx = j;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-                int a[] = {-4, -5, 9, 7, 10, 6};
-                int n = a.length;
-                
-                
-                for(int i = 0; i<n-1; i++) {
-                	int minInd = i;
-                	for(int j = i; j<n; j++) {
-                		
-                		if(a[j] < a[minInd]) {
-                			minInd = j;
-                		}
-                	}
-                	
-                	int temp = a[i];
-                	a[i] = a[minInd];
-                	a[minInd] = temp;
-                	
-                	
-                	}
-                
-                for(int e : a) {
-            		System.out.print(e + " ");
-                }
-                
+			int temp = arr.get(min_idx);
+			arr.set(min_idx, arr.get(i));
+			arr.set(i,temp);
+		}
 	}
 
+	public static void main(String args[]) throws IOException
+	{
+        SelectionSort obj = new SelectionSort();
+        String pathToFile = "./Sorting/unsorted.txt";
+        File unsorted = new File(pathToFile);
+        Scanner sc = new Scanner(unsorted);
+        sc.useDelimiter(",");
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        while(sc.hasNext()){
+            arr.add(sc.nextInt());
+        }
+		obj.sorting(arr);
+        System.out.println("Sorted array");
+		
+        System.out.println( arr);
+        sc.close();
+	}
 }
