@@ -48,18 +48,23 @@ ll num_gen(ll fp)
 		return 1;
 	else
 	{
-		ll x=fp/9;
-		ll r = fp%9;
+		ll x=fp/9;  
+		ll r = fp%9; 
 		if(r>0)
-		return (x+1);
+		return (x+1);   
 		return (x);
 	}
 	
 }
 int32_t main()
 {
-    Note:
-    so being precise we have to generate a number whose sum is equal to the given number i.e Pr,Pc
+    // Note:
+    // so being precise we have to generate a number whose sum of digits is equal to the given number i.e Pr,Pc now 
+    // the less the number we use, it's better
+    // so we have made num_gen() function which generates a number whose sum of digits is equal to the
+    // given number (Pr or Pc) by continously dividing with 9 (as the 9 is largest single digit number) 
+    // 
+    
     always();
     w(t)
     {
