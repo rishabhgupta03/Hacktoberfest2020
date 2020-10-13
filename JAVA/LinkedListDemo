@@ -1,0 +1,126 @@
+public class LinkedListDemo {
+    public static void main(String[] args) {
+        LinkList linkList = new LinkList();
+        linkList.add(new Node(1, null));
+        linkList.add(new Node(2, null));
+        linkList.add(new Node(4, null));
+        System.out.println(linkList.stringValue());
+
+        linkList.addAt(2, new Node(3, null));
+        System.out.println(linkList.stringValue());
+
+        linkList.add(new Node(5, null));
+        linkList.add(new Node(6, null));
+        linkList.add(new Node(7, null));
+        System.out.println(linkList.stringValue());
+        System.out.println(linkList.size());
+
+        linkList.removeAt(0);
+        linkList.removeAt(2);
+        linkList.removeAt(2);
+        linkList.removeAt(3);
+        System.out.println(linkList.stringValue());
+
+        linkList.getValueAt(2);
+        linkList.getValueAt(3);
+        linkList.getValueAt(4);
+    }
+
+    public static class LinkList {
+        int length = 0;
+        Node currentNode = null;
+        Node head = null;
+
+        void add(Node newNode) {
+            addAt(length, newNode);
+        }
+
+        void addAt(int position, Node newNode) {
+            if(position > length) return;
+
+            currentNode = getAt(0);
+            if(length == 0) {
+                currentNode = newNode;
+                head = newNode;
+            } else if(position == 0) {
+                head = newNode;
+                newNode.next = currentNode;
+            } else if(position == length) {
+                currentNode = getAt(0);
+                while(currentNode.next != null)
+                    currentNode = currentNode.next;
+                currentNode.next = newNode;
+            } else {
+                currentNode = getAt(0);
+                while (position > 1) {
+                    currentNode = currentNode.next;
+                    position--;
+                }
+                newNode.next = currentNode.next;
+                currentNode.next = newNode;
+            }
+            length++;
+        }
+
+        void removeAt(int position) {
+            if (position >= length) return;
+            currentNode = getAt(0);
+            if (position == 0) {
+                head = currentNode.next;
+                currentNode = null;
+            } else {
+                while (position > 1) {
+                    currentNode = currentNode.next;
+                    position--;
+                }
+                currentNode.next = currentNode.next.next;
+            }
+            length--;
+        }
+
+        int size() {
+            return length;
+        }
+
+        Node getAt(int position) {
+            if(position >= length) return null;
+            currentNode = head;
+            while (position > 0) {
+                currentNode = currentNode.next;
+                position--;
+            }
+            return currentNode;
+        }
+
+        void getValueAt(int position) {
+            Node node = getAt(position);
+            String value = null;
+            if(node != null)
+                value = String.valueOf(node.value);
+            System.out.println(value);
+        }
+
+        String stringValue() {
+            String nodes = "[";
+            currentNode = getAt(0);
+            while (currentNode != null) {
+                nodes += (currentNode.value + ",");
+                currentNode = currentNode.next;
+            }
+            if(nodes.endsWith(","))
+                nodes = nodes.substring(0, nodes.length() - 1);
+            nodes += "]";
+            return nodes;
+        }
+    }
+
+    public static class Node {
+        int value;
+        Node next;
+
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
+        }
+    }
+}
