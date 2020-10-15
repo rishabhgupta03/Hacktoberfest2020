@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Log in | Tumblr</title>
+        <link rel="stylesheet" href="style.css">
+       
+
+    </head>
+    <body>
+        
+        <ul>
+            <li><a href="#home"></a></li>
+            <li><a href="#sub1"></a></li>
+            <li><a href="#sub2"></a></li>
+            <li><a href="#sub3"></a></li>
+            <li><a href="#sub4"></a></li>
+            <li><a href="#sub5"></a></li>
+            
+        </ul>
+        <div id="search-box">
+         <div></div>  
+         <input type="text" placeholder="search tumblr">
+            
+        </div>
+        
+        <div id="container">
+            <div id="home">
+           
+                   <h1>t</h1><br><h3>tumblr</h3>
+            <p>Come for what you love.<br>
+         Stay for what you discover.</p>
+         <p id="p2">HERE'S WHAT TRENDING</p>
+         <button id="btn1">Get started</button><br>
+         <button id="btn2">Log in </button>
+         <p id="p1">Posted by shivam goyal</p>
+         <img src="shivam.jpg" id="img1">
+            </div>
+            <div id="sub1"><h4>Tumblr is so easy to use that<br> it’s hard to explain.</h4>
+            <p id="p3">We made it really, really simple for people to make a blog and put whatever<br> they want on it. Stories, photos, GIFs, TV shows, links, quips, dumb jokes,<br> smart jokes, Spotify tracks, mp3s, videos, fashion, art, deep stuff. Tumblr is<br> 492 million different blogs, filled with literally whatever.</p>
+            <button id="btn3">Log In</button>
+            <button id="btn4">Sign Up</button>
+            </div>
+            <div id="sub2"><h5>Tumblr is blogs.</h5>
+                <p>hai</p>
+                <p>shivam</p>
+
+                <button id="btn3">Log In</button>
+                <button id="btn4">Sign Up</button>
+            </div>
+            <div id="sub3"><h3>tumbler</h3>
+                <button id="btn3">Log In</button>
+                <button id="btn4">Sign Up</button>
+            </div>
+            <div id="sub4">
+                <button id="btn3">Log In</button>
+                <button id="btn4">Sign Up</button>
+            </div>
+            <div id="sub5"><h3>Okay, it’s not actually hard to explain.</h3>
+                <p>Okay, it’s not actually hard to explain.</p>
+                <button id="btn1">Get started</button><br>
+         <button id="btn2">NEXT</button>
+                <button id="btn3">Log In</button>
+                <button id="btn4">Sign Up</button>
+
+            </div>
+            
+        </div>
+
+
+    </body>
+</html>
