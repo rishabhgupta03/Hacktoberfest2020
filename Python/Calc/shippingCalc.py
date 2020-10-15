@@ -30,7 +30,7 @@ class Calc(wx.Frame):
 
         self.Radio1 = wx.RadioButton(self.panel, label="2 - 4.9 lbs. $8", pos=(40, 200))
 
-        self.Radio2 = wx.RadioButton(self.panel, label="5 - 10 lbs. $12.25", pos=(40, 220))
+        self.Radio2 = wx.RadioButton(self.panel, label="5 - 10 lbs. $12.25", pos=(40, 210))
 
         self.Radio3 = wx.RadioButton(self.panel, label="overland $2.75", style = wx.RB_GROUP, pos=(200, 180))
 
