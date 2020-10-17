@@ -1,7 +1,7 @@
 import static java.lang.Math.abs; 
 import java.util.*; 
 
-class 3SumClosest 
+class ThreeSumClosest 
 { 
 
     // Function to return the sum of a 
