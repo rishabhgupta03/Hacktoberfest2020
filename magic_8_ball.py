@@ -1,36 +1,13 @@
 import sys
 import random
-
-ans = True
-
-while ans:
-       question = input("ask the magic 8 ball a question: (press enter to quit) ")
-
-       answers = random.randint(1,8)
-
-       if question == "":
-           sys.exit()
-
-       elif answers == 1:
-           print ("Good:)")
-
-       elif answers == 2:
-           print ("Certainly:)")
-
-       elif answers == 3:
-           print ("You may rely on it:)")
-
-       elif answers == 4:
-           print ("Ask again later:)")
-
-       elif answers == 5:
-           print ("Concentrate and ask again:)")
-
-       elif answers == 6:
-           print ("Vague, try again:)")
-
-       elif answers == 7:
-           print ("Nope:( If that's what you were looking for then, Kudos:)")
-
-       elif answers == 8:
-           print ("Oops, it's a No:( If that's what you were looking for then, Kudos:)")
+answers = ['It is certain.','As I see it, yes.','It is decidedly so.','Most likely.',
+           'Without a doubt.','Without a doubt.','Yes.','Yes – definitely.','You may rely on it.',
+           'Signs point to yes.','Reply hazy, try again.','Ask again later.','Better not tell you now.',
+           'Cannot predict now.','Concentrate and ask again.','Don\'t count on it.','My reply is no.',
+           'My sources say no.','Outlook not so good.','Very doubtful']
+question = input("Ask the Magic-8 Ball your Question(Press Enter to quit): ")
+if(question==""):
+    print("Hope your problem is solved, if not I can help :)")
+    sys.exit()
+else:
+    print("-->",random.choice(answers))
