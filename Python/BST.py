@@ -1,104 +1,91 @@
-#!/usr/bin/env python3
-#Given a #binarytree. Check whether it is a #BST or not.
-#Expected Time Complexity: O(N).
-#Expected Auxiliary Space: O(Height of the BST).
-
-#Code starts here
-result = True
-prev = 0
-
-
-def isValidBSTUtil(root):
-    global result, prev
-    if root != None and result:
-        isValidBSTUtil(root.left)
-        if root.data <= prev:
-            result = False 
-        prev = root.data
-
-        isValidBSTUtil(root.right)
-
-def isValidBST(root):
-    global result, prev
-    result = True
-    prev = 0
-    isValidBSTUtil(root)
-    return result
-
-from collections import deque
-# Tree Node
 class Node:
-    def __init__(self, val):
-        self.right = None
-        self.data = val
+    def __init__(self, value):
+        self.value = value
         self.left = None
+        self.right = None
 
-# Function to Build Tree   
-def buildTree(s):
-    #Corner Case
-    if(len(s)==0 or s[0]=="N"):           
-        return None
 
-    # Creating list of strings from input 
-    # string after spliting by space
-    ip=list(map(str,s.split()))
+def insert(root, node):
+    if root is None:
+        root = node
+        return root
 
-    # Create the root of the tree
-    root=Node(int(ip[0]))                     
-    size=0
-    q=deque()
+    if node.value < root.value:
+        root.left = insert(root.left, node)
 
-    # Push the root to the queue
-    q.append(root)                            
-    size=size+1 
+    if node.value > root.value:
+        root.right = insert(root.right, node)
 
-    # Starting from the second element
-    i=1                                       
-    while(size>0 and i<len(ip)):
-        # Get and remove the front of the queue
-        currNode=q[0]
-        q.popleft()
-        size=size-1
-
-        # Get the current node's value from the string
-        currVal=ip[i]
-
-        # If the left child is not null
-        if(currVal!="N"):
-
-            # Create the left child for the current node
-            currNode.left=Node(int(currVal))
-
-            # Push it to the queue
-            q.append(currNode.left)
-            size=size+1
-        # For the right child
-        i=i+1
-        if(i>=len(ip)):
-            break
-        currVal=ip[i]
-
-        # If the right child is not null
-        if(currVal!="N"):
-
-            # Create the right child for the current node
-            currNode.right=Node(int(currVal))
-
-            # Push it to the queue
-            q.append(currNode.right)
-            size=size+1
-        i=i+1
     return root
 
 
-if __name__=="__main__":
-    t=int(input("No. of testcases: "))
-    for _ in range(0,t):
-        s=input("Tree list(level-order): ")
-        root=buildTree(s)
-        if isValidBST(root):
-            print("Valid BST\n")
-        else:
-            print("Not a BST\n")
+def preorder(root):
+    if root:
+        print(root.value)
+        preorder(root.left)
+        preorder(root.right)
 
-# } Driver Code Ends
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.value)
+        inorder(root.right)
+
+
+def postorder(root):
+    if root:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.value)
+
+
+def get_min_value_node(root):
+    if root:
+        while root.left is not None:
+            root = root.left
+        return root
+
+
+def delete_node(root, value):
+    if root is None:
+        return root
+
+    if value < root.value:
+        root.left = delete_node(root.left, value)
+
+    elif value > root.value:
+        root.right = delete_node(root.right, value)
+
+    else:
+        if root.left is None:
+            temp = root.right
+            root = None
+            return temp
+
+        elif root.right is None:
+            temp = root.left
+            root = None
+            return temp
+
+        else:
+            temp = get_min_value_node(root.right)
+            root.value = temp.value
+            root.right = delete_node(root.right, temp.value)
+
+    return root
+
+
+root = Node(50)
+insert(root, Node(10))
+insert(root, Node(33))
+insert(root, Node(81))
+insert(root, Node(15))
+insert(root, Node(60))
+insert(root, Node(27))
+
+delete_node(root, 50)
+
+preorder(root)
+inorder(root)
+postorder(root)

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Competitive Coding/Algorithm/Searching"/>
+	<classpathentry kind="src" path="Competitive Coding/DS/Arrays"/>
+	<classpathentry kind="src" path="Competitive Coding/DS/BinarySearchTree"/>
+	<classpathentry kind="src" path="Competitive Coding/DS/Graph"/>
+	<classpathentry kind="src" path="Competitive Coding/DS/Heap"/>
+	<classpathentry kind="src" path="Competitive Coding/DS/Queue"/>
+	<classpathentry kind="src" path="Competitive Coding/DS/Stack"/>
+	<classpathentry excluding="Practice_Problems/|ProjectEular/" kind="src" path="JAVA"/>
+	<classpathentry kind="src" path="JAVA/Practice_Problems"/>
+	<classpathentry kind="src" path="JAVA/ProjectEular"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
