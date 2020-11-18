@@ -1,0 +1,77 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        // Your Code Here
+        int N = scn.nextInt();
+        int[][] arr = new int[N][N];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                arr[i][j] = scn.nextInt();
+            }
+        }
+         sudoku(arr,0,0);
+    }
+    static Scanner scn = new Scanner(System.in);
+    public static void sudoku(int[][] arr, int row, int col) {
+        if (col == arr[0].length) {
+            row++;
+            col = 0;
+        }
+        if (row == arr.length) {
+            display(arr);
+            return;
+        }
+        if (arr[row][col] != 0) {
+            sudoku(arr, row, col + 1);
+            return;
+        }
+        for (int i = 1; i <= 9; i++) {
+            if (isItSafe(arr, row, col, i)) {
+                arr[row][col] = i;
+                sudoku(arr, row, col + 1);
+                arr[row][col] = 0;
+            }
+            
+            
+        }
+    }
+    public static boolean isItSafe(int[][] arr, int row, int col, int val) {
+        return isitsaferow(arr, row, val) && isitsafecol(arr, col, val) && isitsafecolumn(arr, row, col, val);
+    }
+    public static boolean isitsaferow(int[][] arr, int row, int i) {
+        for (int c = 0; c < arr[0].length; c++) {
+            if (arr[row][c] == i) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static boolean isitsafecol(int[][] arr, int col, int i) {
+        for (int r = 0; r < arr.length; r++) {
+            if (arr[r][col] == i) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static boolean isitsafecolumn(int[][] arr, int row, int col, int i) {
+        int bsr = row - row % 3;
+        int bsc = col - col % 3;
+        for (int r = bsr; r < bsr + 3; r++) {
+            for (int c = bsc; c < bsc + 3; c++) {
+                if (arr[r][c] == i) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    public static void display(int[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}

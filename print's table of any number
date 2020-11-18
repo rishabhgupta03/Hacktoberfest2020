@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<conio.h>
+main()
+{ int n,cnt,a=0;
+    printf("enter number");
+    scanf("%d",&n);
+    for(cnt=1;cnt<=10;cnt++)    { printf("%4d*%4d=%4d\n",n,cnt,n*cnt);}
+    getch();
+    }
