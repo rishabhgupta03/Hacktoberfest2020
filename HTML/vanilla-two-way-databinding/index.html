@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Two Way Data Binding</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./two-way.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <code>
+                Two Way Databinding in VanillaJS
+            </code>
+            <p>
+                This concept can be seen in Frameworks such as <b>Angular, Vue</b>
+            </p>
+        </div>
+        <h2 data-binding="name"></h2>
+        <input type="text" name="name" data-model="name" placeholder="Enter Text">
+    </div>
+</body>
+
+</html>
